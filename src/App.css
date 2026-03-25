@@ -1,0 +1,152 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+/*  Watermark Pattern Background */
+#root::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  background-image: url('/bg.png'); /* Replace with actual path */
+  background-repeat: repeat;
+
+  background-size: 300px auto; /* Adjust as needed */
+  opacity: 0.05; /* Make it subtle */
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hospital-banner {
+  transition: all 0.3s ease;
+}
+
+.hospital-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.specialty-icon {
+  transition: all 0.3s ease;
+}
+
+.specialty-icon:hover {
+  transform: scale(1.05);
+}
+
+.appointment-card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.appointment-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.award-card {
+  transition: all 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-5px);
+}
+
+.hospital-card {
+  transition: all 0.3s ease;
+}
+
+.hospital-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo-container img {
+  max-height: 50px;
+}
+
+.blog-card {
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.footer-link:hover {
+  color: #2ec5ce;
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.hero-carousel-item {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero-carousel-item.active {
+  opacity: 1;
+}
+
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 91, 171, 0.7), transparent);
+  pointer-events: none;
+}
+
+.hero-text {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Define your own layer if needed */
+@layer utilities {
+  .text-foreground {
+    color: theme('colors.foreground');
+  }
+
+  .border-border {
+    border-color: theme('colors.border');
+  }
+}

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical watermark background */
+body {
+  /* background-image: url('/lovable-uploads/logd.png') !important; */
+  background-repeat:no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  position: relative !important;
+}
+
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  z-index: -9999 !important;
+  pointer-events: none !important;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 222.2 84% 4.9%; /* Dark text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 93 76% 35%; /* #499E14 - Green */
+    --primary-foreground: 0 0% 98%; /* Near-white for contrast */
+
+    --secondary: 93 76% 25%; /* Darker green for secondary */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 93 40% 96%; /* Lighter green for muted backgrounds */
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 93 60% 48%; /* Slightly lighter green for accents */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%; /* Keep red for errors */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 93 31.8% 91.4%; /* Light green border */
+    --input: 93 31.8% 91.4%;
+    --ring: 93 76% 35%; /* Green for focus rings */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 93 40% 98%; /* Light green sidebar */
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 93 76% 35%; /* Green for sidebar primary */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 93 40% 95%; /* Light green accent */
+    --sidebar-accent-foreground: 93 76% 35%; /* Green text */
+    --sidebar-border: 93 20% 91%;
+    --sidebar-ring: 93 76% 35%; /* Green ring */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%; /* Dark background */
+    --foreground: 0 0% 98%; /* Light text */
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 93 76% 35%; /* Green in dark mode */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 93 76% 25%; /* Darker green in dark mode */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 93 32.6% 17.5%; /* Darker green muted */
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 93 32.6% 17.5%; /* Darker green accent */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 93 32.6% 17.5%; /* Dark green border */
+    --input: 93 32.6% 17.5%;
+    --ring: 93 76% 35%; /* Green ring */
+
+    --sidebar-background: 93 50% 10%; /* Dark green sidebar */
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 93 76% 35%; /* Green */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 93 40% 15%; /* Dark green */
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 93 30% 15%;
+    --sidebar-ring: 93 76% 35%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-white text-foreground;
+    font-family: 'Comfortaa', cursive;
+  }
+}
+
+/* Custom color classes */
+.max-healthcare-green {
+  color: #499E14;
+}
+
+.max-healthcare-teal {
+  color: #3a7e10;
+}
+
+.max-healthcare-bg-green {
+  background-color: #499E14;
+}
+
+.max-healthcare-bg-teal {
+  background-color: #3a7e10;
+}
+
+.max-healthcare-bg-light-green {
+  background-color: #f0f8e8;
+}
+
+.max-healthcare-bg-light-teal {
+  background-color: #e6f4e0;
+}
+
+/* Healthcare heading style from the image */
+@layer utilities {
+  .healthcare-heading {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700; /* Bold */
+    font-size: 5rem; /* 80px, matching the large size in the image */
+    line-height: 1.1; /* Tight line spacing */
+    color: hsl(var(--foreground)); /* Matches your theme's dark gray in light mode */
+    text-align: left;
+  }
+
+  /* Optional: For the emphasized word (like "Global") */
+  .healthcare-heading-emphasis {
+    font-size: 5.5rem; /* Slightly larger, like "Global" in the image */
+  }
+
+  /* For smaller words like "and" */
+  .healthcare-heading-small {
+    font-size: 4rem; /* Slightly smaller */
+    text-transform: lowercase;
+  }
+}
