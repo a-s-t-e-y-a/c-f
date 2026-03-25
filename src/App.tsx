@@ -67,7 +67,7 @@ import Urology from './pages/specialties/Urology';
 // User Authentication & Dashboard
 import Login from './components/userspage/login';
 import Registor from './components/userspage/registor';
-import ForgotPassword from './components/userspage/forgotpassword';
+import ForgotPassword from './components/userspage/ForgotPassword';
 
 import Userdashboard from './components/userspage/userboard';
 import PatientProfile from './components/userspage/userprofile';
